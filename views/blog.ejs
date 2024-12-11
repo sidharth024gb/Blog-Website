@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+<div class="container px-5" id="blog">
+  <div class="row row-cols-1">
+    <h1 class="border-bottom border-white p-0 pb-2">
+      <%= blog.title %> <span class="fs-6"><%= blog.date %></span>
+    </h1>
+    <img
+      src="/blogImages/<%= blog.image %>"
+      alt="<%= blog.title %>'s Image"
+      class="my-2 rounded-3 p-0 w-100"
+    />
+    <p class="p-0"><%= blog.para %></p>
+  </div>
+</div>
+<%- include("partials/footer.ejs") %>

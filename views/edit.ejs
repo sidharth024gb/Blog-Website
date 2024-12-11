@@ -1,0 +1,49 @@
+<%- include("partials/header.ejs") %>
+<div class="container my-3">
+  <form
+    action="/edit/blog"
+    method="post"
+    enctype="multipart/form-data"
+    id="edit-form"
+    class="row g-2 px-md-5 d-block"
+  >
+    <input type="text" name="id" id="id" value="<%= blog.id %>" hidden />
+    <input
+      type="file"
+      name="image"
+      id="image"
+      class="opacity-0"
+      style="height: 1px; width: 1px"
+    />
+    <label for="image" class="p-0 m-0 position-relative">
+      <img
+        src="<%= 'http://localhost:3000/blogImages/'+blog.image %>"
+        alt="<%= blog.title %>'s Image"
+        class="w-100 d-block rounded-2"
+      />
+      <span
+        class="position-absolute bottom-0 w-100 d-flex justify-content-center align-items-center"
+      >
+        <img src="/Images/upload-icon.png" alt="Upload Icon" />
+      </span>
+    </label>
+    <input
+      type="text"
+      name="title"
+      id="title"
+      value="<%= blog.title %>"
+      class="form-control col"
+      required
+    />
+    <textarea
+      name="para"
+      id="para"
+      class="form-control col"
+      required
+    ><%= blog.para %></textarea>
+    <div class="col-auto d-flex">
+      <button type="submit" class="btn btn-success ms-auto">Submit</button>
+    </div>
+  </form>
+</div>
+<%- include("partials/footer.ejs") %>

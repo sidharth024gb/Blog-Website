@@ -1,0 +1,14 @@
+<div class="row gap-3 justify-content-around mt-3">
+  <%blogs.forEach((blog)=>{%>
+    <a 
+        <% let path="/blogImages/" + blog.image %>
+        href="/show/blog/<%= blog.id %>" 
+        style="background-image: url('<%= path %>');" 
+        class="col-5 rounded-2 text-reset text-decoration-none position-relative p-0"
+    >
+        <div class="text-center position-absolute bottom-0 left-0 w-100">
+            <h2><%= blog.title %></h2>
+        </div>
+    </a>
+  <%})%>
+</div>
